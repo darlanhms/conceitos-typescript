@@ -1,0 +1,23 @@
+{
+  "name": "conceitos-typescript",
+  "version": "1.0.0",
+  "description": "inspirado em um curso básico de typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darlanhms/conceitos-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darlanhms/conceitos-typescript/issues"
+  },
+  "homepage": "https://github.com/darlanhms/conceitos-typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
