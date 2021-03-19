@@ -10,4 +10,8 @@ export class Negociacoes {
     toArray(): Array<Negociacao> {
         return ([] as Array<Negociacao>).concat(this.negociacoes);
     }
+
+    toString(): string {
+        return JSON.stringify(this.negociacoes);
+    }
 }

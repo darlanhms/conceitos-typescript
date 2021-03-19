@@ -2,6 +2,7 @@ import { NegociacoesView, MensagemView } from '../views/index'
 import { Negociacoes, Negociacao, NegociacaoParcial } from '../models/index'
 import { DomInjection, Throttle } from '../helpers/decorators/index';
 import { NegociacaoService } from '../services/NegociacaoService';
+import { printObjects } from '../helpers/utils/printObjects';
 
 export class NegociacaoController {
     @DomInjection("#data")
@@ -41,6 +42,7 @@ export class NegociacaoController {
         this.negociacoes.adiciona(negociacaoNova);
         this.negociacoesView.update(this.negociacoes);
         this.mensagemView.update("Negociação adicionada com sucesso")
+        printObjects(negociacaoNova, this.negociacoes)
     }
 
     private isDiaUtil(date: Date): boolean {
