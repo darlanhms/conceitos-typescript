@@ -1,3 +1,3 @@
-export abstract class EnforcePrint {
-    abstract toString(): string;
+export interface EnforcePrint {
+    toString(): string;
 }
