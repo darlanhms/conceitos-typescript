@@ -1,6 +1,6 @@
 import { NegociacoesView, MensagemView } from '../views/index'
 import { Negociacoes, Negociacao, NegociacaoParcial } from '../models/index'
-import { DomInjection } from '../helpers/decorators/index';
+import { DomInjection, Throttle } from '../helpers/decorators/index';
 
 export class NegociacaoController {
     @DomInjection("#data")
@@ -46,6 +46,7 @@ export class NegociacaoController {
         return day !== DiaDaSemana.SABADO && day !== DiaDaSemana.DOMINGO
     }
 
+    @Throttle()
     importaDados() {
         fetch("http://localhost:8080/dados")
             .then(res => res.json())
