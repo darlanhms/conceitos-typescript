@@ -1,3 +1,5 @@
+import { ExecutionTime } from "../helpers/decorators/ExecutionTime";
+
 export abstract class View<T> {
     private element: Element;
 
@@ -5,6 +7,7 @@ export abstract class View<T> {
         this.element = document.querySelector(selector) as Element
     }
 
+    @ExecutionTime()
     update(model: T): void {
         let template = this.template(model);
 
