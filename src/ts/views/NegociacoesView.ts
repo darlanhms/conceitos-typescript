@@ -11,7 +11,7 @@ export class NegociacoesView extends View<Negociacoes> {
                         <th>DATA</th>
                         <th>QUANTIDADE</th>
                         <th>VALOR</th>
-                        <th>VOLUMEEE</th>
+                        <th>VOLUME</th>
                     </tr>
                 </thead>
 
