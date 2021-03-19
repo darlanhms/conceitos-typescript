@@ -1,4 +1,7 @@
-class NegociacoesView extends View<Negociacoes> {
+import { View } from './View'
+import { Negociacoes } from '../models/Negociacoes'
+
+export class NegociacoesView extends View<Negociacoes> {
     
     template(model: Negociacoes): string {
         return `
@@ -8,7 +11,7 @@ class NegociacoesView extends View<Negociacoes> {
                         <th>DATA</th>
                         <th>QUANTIDADE</th>
                         <th>VALOR</th>
-                        <th>VOLUME</th>
+                        <th>VOLUMEEE</th>
                     </tr>
                 </thead>
 

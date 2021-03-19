@@ -1,4 +1,4 @@
-abstract class View<T> {
+export abstract class View<T> {
     private element: Element;
 
     constructor(selector: string) {

@@ -3,7 +3,9 @@
         "target": "ES6",
         "outDir": "src/js",
         "noEmitOnError": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "removeComments": true,
+        "module": "system"
     },
     "include": [
         "src/ts/**/*"
