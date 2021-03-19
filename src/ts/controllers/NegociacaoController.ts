@@ -53,8 +53,15 @@ export class NegociacaoController {
     @Throttle()
     importaDados() {
        this.negociacaoService.obterNegociacoes()
-        .then(negociacoes => {
-            negociacoes.forEach(negociacao => {
+        .then(negociacoesToImport => {
+            const negociacoesJaImportadas = this.negociacoes.toArray();
+
+            negociacoesToImport = negociacoesToImport
+                .filter(negociacao => !negociacoesJaImportadas
+                    .some(jaImportada => negociacao.isEqual(jaImportada)
+                ))
+
+            negociacoesToImport.forEach(negociacao => {
                 this.negociacoes.adiciona(negociacao)
             });
 

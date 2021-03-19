@@ -1,6 +1,7 @@
+import { EnforceEquality } from './EnforceEquality';
 import { Negociacao } from './Negociacao';
 
-export class Negociacoes {
+export class Negociacoes implements EnforceEquality<Negociacoes> {
     private negociacoes: Array<Negociacao> = [];
 
     adiciona(negociacao: Negociacao): void {
@@ -13,5 +14,9 @@ export class Negociacoes {
 
     toString(): string {
         return JSON.stringify(this.negociacoes);
+    }
+
+    isEqual(negociacoes: Negociacoes): boolean {
+        return JSON.stringify(this.negociacoes) === JSON.stringify(negociacoes)
     }
 }

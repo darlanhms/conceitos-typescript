@@ -1,4 +1,6 @@
-export class Negociacao {
+import { EnforceEquality } from "./EnforceEquality";
+
+export class Negociacao implements EnforceEquality<Negociacao> {
     constructor(readonly data: Date, readonly quantidade: number, readonly valor: number) {}
 
     get volume() {
@@ -12,5 +14,11 @@ export class Negociacao {
         Valor: ${this.valor},
         Volume: ${this.volume}
         `
+    }
+
+    public isEqual(negociacao: Negociacao): boolean {
+        return this.data.getDate() === negociacao.data.getDate() 
+                && this.data.getMonth() === this.data.getMonth() 
+                && this.data.getFullYear() === this.data.getFullYear();
     }
 }
